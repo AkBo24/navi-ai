@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/react,django,python,macos,node
-# Edit at https://www.toptal.com/developers/gitignore?templates=react,django,python,macos,node
+# Created by https://www.toptal.com/developers/gitignore/api/python,node,django,react
+# Edit at https://www.toptal.com/developers/gitignore?templates=python,node,django,react
 
 ### Django ###
 *.log
@@ -170,39 +170,6 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
-
-### macOS ###
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-### macOS Patch ###
-# iCloud generated files
-*.icloud
 
 ### Node ###
 # Logs
@@ -446,4 +413,4 @@ psd
 thumb
 sketch
 
-# End of https://www.toptal.com/developers/gitignore/api/react,django,python,macos,node
+# End of https://www.toptal.com/developers/gitignore/api/python,node,django,react

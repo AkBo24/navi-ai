@@ -1,15 +1,11 @@
-import React from 'react';
+import './App.css';
 
-const Example = (props: { title: string; number: number }) => {
+function App() {
     return (
-        <div>
-            {props.title} {props.number}
-        </div>
+        <>
+            <h1>t</h1>
+        </>
     );
-};
-
-const App = () => {
-    return <Example title='Hello World' number={23933} />;
-};
+}
 
 export default App;
