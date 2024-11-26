@@ -33,6 +33,9 @@ ALLOWED_HOSTS = ['localhost', '0.0.0.0']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'rest_framework',
+    'drf_spectacular',
+    'corsheaders',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -40,11 +43,6 @@ INSTALLED_APPS = [
 
     # internal
     'core',
-
-    # third party
-    'rest_framework',
-    'drf_spectacular',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +132,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     # YOUR SETTINGS
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+
+    ),
 }
 
 SPECTACULAR_SETTINGS = {
@@ -148,3 +150,11 @@ SPECTACULAR_SETTINGS = {
 #     "http://localhost:3000/",  # React app
 # ]
 CORS_ALLOW_ALL_ORIGINS = True
+
+AUTH_USER_MODEL = 'core.User'
+
+DJOSER = {
+    'SERIALIZERS': {
+        'user_create': 'core.serializers.UserCreateSerializer',
+    },
+}
