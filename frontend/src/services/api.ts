@@ -15,11 +15,30 @@ export type Todo = {
 export const api = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api/v1' }),
+    tagTypes: ['todos'],
     endpoints: (builder) => ({
         getTodos: builder.query<Todo[], void>({
             query: () => `todos`,
+            providesTags: ['todos'],
+        }),
+        addTodo: builder.mutation<Todo, Partial<Todo>>({
+            query: (body) => ({
+                url: `todos`,
+                method: 'POST',
+                body,
+            }),
+            invalidatesTags: ['todos'],
+        }),
+        updateTodo: builder.mutation<Todo, Partial<Todo> & Pick<Todo, 'id'>>({
+            // note: an optional `queryFn` may be used in place of `query`
+            query: ({ id, ...patch }) => ({
+                url: `todos/${id}`,
+                method: 'PATCH',
+                body: patch,
+            }),
+            invalidatesTags: ['todos'],
         }),
     }),
 });
 
-export const { useGetTodosQuery } = api;
+export const { useGetTodosQuery, useUpdateTodoMutation } = api;
