@@ -9,12 +9,12 @@ export type Todo = {
     title: string;
     description: string;
     completed: boolean;
-    owner: User;
+    owner?: User;
 };
 
 export const api = createApi({
     reducerPath: 'api',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api/v1' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api/' }),
     tagTypes: ['todos'],
     endpoints: (builder) => ({
         getTodos: builder.query<Todo[], void>({
@@ -25,7 +25,7 @@ export const api = createApi({
             query: (body) => ({
                 url: `todos`,
                 method: 'POST',
-                body,
+                body: body,
             }),
             invalidatesTags: ['todos'],
         }),
@@ -41,4 +41,4 @@ export const api = createApi({
     }),
 });
 
-export const { useGetTodosQuery, useUpdateTodoMutation } = api;
+export const { useGetTodosQuery, useAddTodoMutation, useUpdateTodoMutation } = api;

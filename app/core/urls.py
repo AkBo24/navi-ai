@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from . import views
 
 router = DefaultRouter(trailing_slash=False)
-router.register(f"api/v1/todos", views.TodoViewSet)
+router.register(f"api/todos", views.TodoViewSet, )
 
 urlpatterns = [
     path('', include(router.urls)),

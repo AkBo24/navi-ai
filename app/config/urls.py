@@ -19,7 +19,8 @@ from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 urlpatterns = [
-    path('', include("todo.urls")),
+    # path('', include("todo.urls")),
+    path('', include("core.urls")),
     path('admin/', admin.site.urls),    
     path('api-auth/', include('rest_framework.urls')),
     # Swagger Schema + UI:

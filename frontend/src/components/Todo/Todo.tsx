@@ -1,7 +1,7 @@
 import { Box, Checkbox, Typography } from '@mui/material';
-import { useUpdateTodoMutation, type Todo } from '../../services/api';
+import { useUpdateTodoMutation, type Todo as TodoView } from '../../services/api';
 
-const Todo: React.FC<{ todo: Todo }> = ({ todo }) => {
+const TodoView: React.FC<{ todo: TodoView }> = ({ todo }) => {
     const [updateTodo] = useUpdateTodoMutation();
     const { completed } = todo;
     return (
@@ -35,4 +35,4 @@ const Todo: React.FC<{ todo: Todo }> = ({ todo }) => {
     );
 };
 
-export default Todo;
+export default TodoView;
